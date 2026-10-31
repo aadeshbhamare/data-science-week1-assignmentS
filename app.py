@@ -5,7 +5,7 @@ from pathlib import Path
 
 st.set_page_config(page_title="Sales Analytics Dashboard", page_icon="📊", layout="wide")
 
-DEFAULT_FILE = Path(__file__).parent / "cleaned_sales_dataset.csv"
+DEFAULT_FILE = Path(__file__).parent / "data" / "cleaned" / "cleaned_sales_dataset.csv"
 
 st.title("📊 Sales Analytics Dashboard")
 st.caption("Interactive dashboard generated from your sales analysis dataset")
@@ -39,7 +39,7 @@ try:
     elif DEFAULT_FILE.exists():
         df = load_data(file_path=str(DEFAULT_FILE), modified_time=DEFAULT_FILE.stat().st_mtime)
     else:
-        st.error("Dataset file not found. Keep cleaned_sales_dataset.csv in the same folder as app.py.")
+        st.error("Dataset file not found. Keep cleaned_sales_dataset.csv in data/cleaned/.")
         st.stop()
 except Exception as exc:
     st.error(f"Could not read the dataset: {exc}")
@@ -155,4 +155,4 @@ st.download_button(
     file_name="filtered_sales_data.csv",
     mime="text/csv"
 )
-st.caption(f"Showing {len(filtered):,} of {len(df):,} rows. To use new source data, replace the CSV beside app.py and click Refresh dashboard.")
+st.caption(f"Showing {len(filtered):,} of {len(df):,} rows. To use new source data, replace the CSV in data/cleaned/ and click Refresh dashboard.")

@@ -65,6 +65,16 @@ The project includes:
 
 Visualizations are available in the `outputs/` directory.
 
+## Interactive Dashboard
+Run the Streamlit dashboard from the repository root:
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+The dashboard loads `data/cleaned/cleaned_sales_dataset.csv` by default. You can also upload a CSV from the dashboard sidebar.
+
 ## Repository Structure
 ```text
 data-science-week1-assignment/
@@ -78,6 +88,7 @@ data-science-week1-assignment/
 │   └── dashboard/
 ├── reports/
 │   └── final_report.pdf
+├── app.py
 ├── screenshots/
 ├── README.md
 └── requirements.txt
