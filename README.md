@@ -21,6 +21,8 @@ This project focuses on cleaning, analyzing, and visualizing an e-commerce sales
 - Google Colab
 - GitHub
 - ReportLab (PDF report generation)
+- PowerBi
+- Streamlit
 
 ## Dataset Overview
 - **Dataset:** E-commerce Sales Dataset
